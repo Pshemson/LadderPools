@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(44,16,21,1);
+  background: -moz-linear-gradient(45deg, rgba(44,16,21,1) 0%, rgba(17,17,17,1) 44%, rgba(15,44,56,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(44,16,21,1)), color-stop(44%, rgba(17,17,17,1)), color-stop(100%, rgba(15,44,56,1)));
+  background: -webkit-linear-gradient(45deg, rgba(44,16,21,1) 0%, rgba(17,17,17,1) 44%, rgba(15,44,56,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(44,16,21,1) 0%, rgba(17,17,17,1) 44%, rgba(15,44,56,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(44,16,21,1) 0%, rgba(17,17,17,1) 44%, rgba(15,44,56,1) 100%);
+  background: linear-gradient(45deg, rgba(44,16,21,1) 0%, rgba(17,17,17,1) 44%, rgba(15,44,56,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c1015', endColorstr='#0f2c38', GradientType=1 );
+
+}
+
+//Fonts
+
+@font-face {
+  font-family: 'Brush';
+  src: url('font/brush.woff');
+  src: local('Brush'), url('font/brush.woff') format('woff'), url('font/brush.woff') format('truetype');
+}
+
+//Mixins
+//RWD:  Minimum widths to apply styles (mobile first)
+
+
+@mixin Small {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin Medium {
+  @media (min-width: 1287px) {
+    @content;
+  }
+}
+
+@mixin Large {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+.container {
+  max-width: 1920px;
+}
+
+.content {
+  width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 29px;
+  color: white;
+}
+
+.quarterFinals {
+  text-align: center;
+  width: 100%;
+  h4 {
+    display: inline-block;
+    font-size: 21px;
+    color: #ff0e07;
+    margin: 0;
+  }
+}
+
+.semiFinals {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 99px;
+  h5 {
+    display: inline-block;
+    font-size: 21px;
+    color: #ff0e07;
+    margin: 0;
+  }
+}
+
+.finalH6 {
+  text-align: center;
+  width: 100%;
+  h6 {
+    display: inline-block;
+    font-size: 21px;
+    color: #ff0e07;
+    margin: 0;
+  }
+}
+
+.poolLadder {
+  display: inline-block;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  padding: 0;
+  width: calc(25% - 10px);
+  text-align: center;
+  //margin-top: 121px;
+
+  li {
+    background-color: white;
+    padding: 20px;
+    display: inline-block;
+    margin: 13px;
+    height: 110px;
+    max-width: 255px;
+    //width: calc(23% - 10px);
+    position: relative;
+    text-align: center;
+    .insidePool {
+      margin-top: -17px;
+    }
+    h3 {
+      margin-top: -7px;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+      min-width: 176px;
+    }
+    img {
+      &:nth-of-type(2) {
+        margin: 0 5px 0 10px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #ff0e07;
+      height: 83px;
+      left: calc(50% - 1px);
+      top: 100%;
+      width: 2px;
+    }
+  }
+  .poolNames {
+    //position: absolute;
+    //top: 112px;
+    text-align: center;
+    h2 {
+      text-align: center;
+      display: inline-block;
+      font-size: 21px;
+      color: #ff0e07;
+      margin: 0;
+    }
+  }
+}
+
+.quarterFinalsLadder {
+  display: inline-block;
+  padding: 0;
+  width: calc(25% - 12px);
+  text-align: center;
+
+  li {
+    background-color: white;
+    padding: 20px;
+    display: inline-block;
+    margin: 13px;
+    height: 110px;
+    max-width: 255px;
+    position: relative;
+    text-align: center;
+    .insidePool {
+      margin-top: -17px;
+    }
+    h3 {
+      margin-top: -7px;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+      min-width: 176px;
+    }
+    img {
+      &:nth-of-type(2) {
+        margin: 0 5px 0 10px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #ff0e07;
+      height: 60px;
+      left: calc(50% - 1px);
+      top: 100%;
+      width: 2px;
+    }
+    .quarterFinalsHr {
+      color: #f00;
+      background: #f00;
+      width: 259px;
+      height: 3px;
+      position: absolute;
+      left: 12%;
+      top: 297px;
+    }
+  }
+}
+
+
+
+
+.semiFinalsLadder {
+  display: inline-block;
+  padding: 10px;
+  width: calc(50% - 19px);
+  text-align: center;
+  li {
+    background-color: white;
+    padding: 20px;
+    display: inline-block;
+    margin: 13px;
+    height: 110px;
+    max-width: 249px;
+    position: relative;
+    text-align: center;
+    .insidePool {
+      margin-top: -17px;
+    }
+    h3 {
+      margin-top: -7px;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+      min-width: 176px;
+    }
+    img {
+      &:nth-of-type(2) {
+        margin: 0 5px 0 10px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #ff0e07;
+      height: 32px;
+      left: calc(50% - 1px);
+      bottom: 100%;
+      width: 2px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #ff0e07;
+      height: 32px;
+      left: calc(50% - 1px);
+      top: 100%;
+      width: 2px;
+    }
+    .line {
+      content: "";
+      position: absolute;
+      background-color: #ff0e07;
+      height: 2px;
+      left: 0;
+      width: 100%;
+      &.top {
+        top: -33px;
+        left: 1px;
+      }
+      &.bottom {
+        bottom: -33px;
+        left: -50%;
+        &.right {
+          right: -50%;
+          left: auto;
+        }
+      }
+    }
+  }
+}
+
+.finalLadder {
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+
+  li {
+    border: 1px solid white;
+    background-color: white;
+    padding: 20px;
+    display: inline-block;
+    margin: 13px;
+    height: 110px;
+    max-width: 255px;
+    position: relative;
+    text-align: center;
+    .insidePool {
+      margin-top: -17px;
+    }
+    h3 {
+      margin-top: -7px;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+      min-width: 176px;
+    }
+    img {
+      &:nth-of-type(2) {
+        margin: 0 5px 0 10px;
+      }
+    }
+    &::before {
+      content: "";
+      border: 1px solid #ff0e07;
+      position: absolute;
+      background-color: #ff0e07;
+      width: 32px;
+      left: 42%;
+      transform: rotate(90deg);
+      top: -18%;
+    }
+  }
+}
